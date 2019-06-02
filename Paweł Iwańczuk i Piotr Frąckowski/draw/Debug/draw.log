@@ -1,17 +1,21 @@
 ﻿  draw2.cpp
-C:\Users\pfrackowski\Desktop\Paweł Iwańczuk i Piotr Frąckowski TP3\draw\draw2.cpp(66): warning C4244: 'argument': conversion from 'double' to 'INT', possible loss of data
-C:\Users\pfrackowski\Desktop\Paweł Iwańczuk i Piotr Frąckowski TP3\draw\draw2.cpp(67): warning C4018: '<': signed/unsigned mismatch
-C:\Users\pfrackowski\Desktop\Paweł Iwańczuk i Piotr Frąckowski TP3\draw\draw2.cpp(87): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(72): warning C4244: 'argument': conversion from 'double' to 'INT', possible loss of data
+C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(73): warning C4018: '<': signed/unsigned mismatch
+C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(93): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
   C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdlib.h(1274): note: see declaration of '_sleep'
-C:\Users\pfrackowski\Desktop\Paweł Iwańczuk i Piotr Frąckowski TP3\draw\draw2.cpp(167): warning C4215: nonstandard extension used: long float
-C:\Users\pfrackowski\Desktop\Paweł Iwańczuk i Piotr Frąckowski TP3\draw\draw2.cpp(184): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\pfrackowski\Desktop\Paweł Iwańczuk i Piotr Frąckowski TP3\draw\draw2.cpp(185): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\pfrackowski\Desktop\Paweł Iwańczuk i Piotr Frąckowski TP3\draw\draw2.cpp(186): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\pfrackowski\Desktop\Paweł Iwańczuk i Piotr Frąckowski TP3\draw\draw2.cpp(200): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\pfrackowski\Desktop\Paweł Iwańczuk i Piotr Frąckowski TP3\draw\draw2.cpp(212): warning C4244: 'argument': conversion from '_Ty' to 'INT', possible loss of data
+C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(243): warning C4215: nonstandard extension used: long float
+C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(260): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(261): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(262): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(276): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(288): warning C4244: 'argument': conversion from '_Ty' to 'INT', possible loss of data
           with
           [
               _Ty=float
           ]
-C:\Users\pfrackowski\Desktop\Paweł Iwańczuk i Piotr Frąckowski TP3\draw\draw2.cpp(212): warning C4244: 'argument': conversion from 'double' to 'INT', possible loss of data
-  draw.vcxproj -> C:\Users\pfrackowski\Desktop\Paweł Iwańczuk i Piotr Frąckowski TP3\Debug\draw2.exe
+C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(288): warning C4244: 'argument': conversion from 'double' to 'INT', possible loss of data
+C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(297): warning C4101: 'hdc': unreferenced local variable
+C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(296): warning C4101: 'ps': unreferenced local variable
+C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(410): warning C4101: 'hdc': unreferenced local variable
+C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(409): warning C4101: 'ps': unreferenced local variable
+  draw.vcxproj -> C:\Users\pfrackowski\Desktop\TP4 projekt\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\Debug\draw2.exe

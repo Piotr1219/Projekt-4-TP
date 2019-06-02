@@ -31,6 +31,12 @@ double g_actual = 0;
 bool okr = false;
 bool prz = false;
 bool del = false;
+//parametry dla ruchu windy
+int pietro = 0;   //docelowe pietro
+int pietro_a = 0;  //aktualne pietro
+int ludzie = 0;   //docelowa wartosc
+int ludzie_a = 0;  //aktualna wartosc
+int max_load = 8;   //max liczba osob
 
 // buttons
 HWND hwndButton;
@@ -110,6 +116,65 @@ void rysowanieOkresu(HDC hdc)
 }
 
 
+void PaintBase(HDC hdc)
+{
+	Graphics graphics(hdc);
+	Pen pen(Color(255, 0, 0, 255));
+	Pen pen2(Color(255, 25 * col, 0, 255));
+	Gdiplus::SolidBrush bialy(Gdiplus::Color(255, 255, 255, 255));
+
+	PointF B = PointF(250, 5);
+	PointF D = PointF(250, 35);
+	Gdiplus::SolidBrush czarny(Gdiplus::Color(255, 0, 0, 0));
+
+	int p1;
+	p1 = pietro - pietro_a;
+	bool gora = true;
+	if(p1<0)
+	{
+		p1 = -p1;
+		gora = false;
+	}
+	int pie, pa;
+	pie = pietro * 75;
+	pa = pietro_a * 75;
+	if (pie == pa)
+	{
+		graphics.FillRectangle(&czarny, 250, 0, 80, 500);
+		graphics.FillRectangle(&bialy, 260, 380 - pa, 60, 80);
+	}
+	while(pie!=pa)
+	 {
+		graphics.FillRectangle(&czarny, 250, 0, 80, 500);
+		graphics.FillRectangle(&bialy, 260, 380 - pa, 60, 80);
+		if (gora == true)
+		{
+			pa=pa+2;
+		}
+		else
+		{
+			pa=pa-2;
+		}
+		Sleep(1);
+	}
+	int p3=0;
+	ludzie_a = ludzie;
+	while(ludzie > 0 && p3<4)
+	{
+		graphics.FillRectangle(&czarny, 265+14*p3, 384 - pa, 10, 30);
+		p3++;
+		ludzie--;
+	}
+	p3 = 0;
+	while (ludzie > 0 && p3 < 4)
+	{
+		graphics.FillRectangle(&czarny, 265+14*p3, 424 - pa, 10, 30);
+		p3++;
+		ludzie--;
+	}
+	pietro_a = pietro;
+}
+
 void repaintWindow(HWND hWnd, HDC &hdc, PAINTSTRUCT &ps, RECT *drawArea)
 {
 	if (drawArea==NULL)
@@ -119,6 +184,17 @@ void repaintWindow(HWND hWnd, HDC &hdc, PAINTSTRUCT &ps, RECT *drawArea)
 	hdc = BeginPaint(hWnd, &ps);
 	rysowanieOkresu(hdc);
 	MyOnPaint(hdc);
+	EndPaint(hWnd, &ps);
+}
+
+void paintElevator(HWND hWnd, HDC& hdc, PAINTSTRUCT& ps, RECT* drawArea)
+{
+	if (drawArea == NULL)
+		InvalidateRect(hWnd, NULL, TRUE); // repaint all
+	else
+		InvalidateRect(hWnd, drawArea, TRUE); //repaint drawArea
+	hdc = BeginPaint(hWnd, &ps);
+	PaintBase(hdc);
 	EndPaint(hWnd, &ps);
 }
 
@@ -217,6 +293,8 @@ void inputData()
 
 int OnCreate(HWND window)
 {
+	PAINTSTRUCT ps;
+	HDC hdc;
 	inputData();
 	return 0;
 }
@@ -231,8 +309,6 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 {
 	UNREFERENCED_PARAMETER(hPrevInstance);
 	UNREFERENCED_PARAMETER(lpCmdLine);
-
-	// TODO: Place code here.
 	
 	MSG msg;
 	HACCEL hAccelTable;
@@ -330,6 +406,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	// main window
 	hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, NULL, NULL, hInstance, NULL);
+	PAINTSTRUCT ps;
+	HDC hdc;
 
 	// create button and store the handle           
 	
@@ -458,9 +536,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		case IDM_EXIT:
 			DestroyWindow(hWnd);
 			break;
+
 		case ID_BUTTON2 :
-			repaintWindow(hWnd, hdc, ps, NULL);
+			pietro = 4;
+			ludzie = 6;
+			paintElevator(hWnd, hdc, ps, NULL);
 			break;
+
 		case ID_BUTTON3:
 			if (skala > 0.4) {
 				skala = skala / 1.3;
@@ -512,6 +594,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		break;
 	case WM_PAINT:
 		hdc = BeginPaint(hWnd, &ps);
+		paintElevator(hWnd, hdc, ps, NULL);
 		// TODO: Add any drawing code here (not depend on timer, buttons)
 		EndPaint(hWnd, &ps);
 		break;
