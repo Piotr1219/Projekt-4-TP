@@ -123,8 +123,8 @@ void PaintBase(HDC hdc)
 	Pen pen2(Color(255, 25 * col, 0, 255));
 	Gdiplus::SolidBrush bialy(Gdiplus::Color(255, 255, 255, 255));
 
-	PointF B = PointF(250, 5);
-	PointF D = PointF(250, 35);
+	PointF L = PointF(540, 5);
+	PointF K = PointF(350, 5);
 	Gdiplus::SolidBrush czarny(Gdiplus::Color(255, 0, 0, 0));
 
 	int p1;
@@ -172,6 +172,12 @@ void PaintBase(HDC hdc)
 		p3++;
 		ludzie--;
 	}
+	Gdiplus::SolidBrush cyfry(Gdiplus::Color(255, 0, 0, 0));
+	Gdiplus::Font* czcionka = new Font(L"Times New Roman", 13);
+	std::wstring ludzie_string;
+	ludzie_string = std::to_wstring(ludzie_a*70);
+	graphics.DrawString(L"Masa osób w windzie (kg): ", 31, czcionka, K, &cyfry);
+	graphics.DrawString(ludzie_string.c_str(), ludzie_string.length(), czcionka, L, &cyfry);
 	pietro_a = pietro;
 }
 
@@ -415,7 +421,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
 		TEXT("DrawAll"),                  // the caption of the button
 		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
-		500, 0,                                  // the left and top co-ordinates
+		580, 0,                                  // the left and top co-ordinates
 		80, 110,                              // width and height
 		hWnd,                                 // parent window handle
 		(HMENU)ID_BUTTON2,                   // the ID of your button
