@@ -26,11 +26,16 @@
 #define ID_BUTTON6				205
 #define ID_BUTTON7				206
 #define ID_BUTTON8				207
+#define ID_BUTTON9				208
+#define ID_BUTTON10				209
+#define ID_BUTTON11				212
+#define ID_BUTTON12				213
+#define ID_BUTTON13				214
+#define ID_BUTTON14				215
+#define ID_BUTTON15				216
 #define ID_RBUTTON1				210
 #define ID_RBUTTON2				211
-#define ID_CHECKBOX1			220
-#define ID_CHECKBOX2			221
-#define ID_CHECKBOX3			222
+
 
 // Next default values for new objects
 //

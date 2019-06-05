@@ -429,73 +429,122 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 		NULL);                               // extra bits you dont really need
 
 	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
-		TEXT("Zwiêksz skalê czasu"),                  // the caption of the button
+		TEXT("^"),                  // the caption of the button
 		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
-		600, 0,                                  // the left and top co-ordinates
-		180, 50,                              // width and height
+		100, 400,                                  // the left and top co-ordinates
+		20, 20,                              // width and height
 		hWnd,                                 // parent window handle
 		(HMENU)ID_BUTTON3,                   // the ID of your button
 		hInstance,                            // the instance of your application
 		NULL);
 	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
-		TEXT("Zmniejsz skalê czasu"),                  // the caption of the button
+		TEXT("^"),                  // the caption of the button
 		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
-		600, 60,                                  // the left and top co-ordinates
-		180, 50,                              // width and height
+		100, 300,                                  // the left and top co-ordinates
+		20, 20,                              // width and height
 		hWnd,                                 // parent window handle
 		(HMENU)ID_BUTTON4,                   // the ID of your button
 		hInstance,                            // the instance of your application
 		NULL);
 	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
-		TEXT("Zmniejsz skalê wysokosci"),                  // the caption of the button
+		TEXT("v"),                  // the caption of the button
 		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
-		500, 120,                                  // the left and top co-ordinates
-		280, 50,                              // width and height
+		100, 325,                                  // the left and top co-ordinates
+		20, 20,                              // width and height
 		hWnd,                                 // parent window handle
 		(HMENU)ID_BUTTON5,                   // the ID of your button
 		hInstance,                            // the instance of your application
 		NULL);
 	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
-		TEXT("Zwiêksz skalê wysokosci"),                  // the caption of the button
+		TEXT("^"),                  // the caption of the button
 		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
-		500, 180,                                  // the left and top co-ordinates
-		280, 50,                              // width and height
+		100, 200,                                  // the left and top co-ordinates
+		20, 20,                              // width and height
 		hWnd,                                 // parent window handle
 		(HMENU)ID_BUTTON6,                   // the ID of your button
 		hInstance,                            // the instance of your application
 		NULL);
 	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
-		TEXT("Pomiñ -"),                  // the caption of the button
+		TEXT("v"),                  // the caption of the button
 		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
-		500, 240,                                  // the left and top co-ordinates
-		80, 50,                              // width and height
+		100, 225,                                  // the left and top co-ordinates
+		20, 20,                              // width and height
 		hWnd,                                 // parent window handle
 		(HMENU)ID_BUTTON7,                   // the ID of your button
 		hInstance,                            // the instance of your application
 		NULL);
 	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
-		TEXT("Pomiñ +"),                  // the caption of the button
+		TEXT("^"),                  // the caption of the button
 		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
-		600, 240,                                  // the left and top co-ordinates
-		80, 50,                              // width and height
+		100, 100,                                  // the left and top co-ordinates
+		20, 20,                              // width and height
 		hWnd,                                 // parent window handle
 		(HMENU)ID_BUTTON8,                   // the ID of your button
 		hInstance,                            // the instance of your application
 		NULL);
-
-	// create button and store the handle                                                       
-
-	hwndButton = CreateWindow(TEXT("button"), TEXT("Wyswietlaj okres"),
-		WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
-		500, 300, 200, 30, hWnd, (HMENU)ID_CHECKBOX1, GetModuleHandle(NULL), NULL);
-
-	hwndButton = CreateWindow(TEXT("button"), TEXT("Wyswietlaj przyspieszenie"),
-		WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
-		500, 350, 200, 30, hWnd, (HMENU)ID_CHECKBOX2, GetModuleHandle(NULL), NULL);
-
-	hwndButton = CreateWindow(TEXT("button"), TEXT("Delay"),
-		WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
-		500, 400, 200, 30, hWnd, (HMENU)ID_CHECKBOX3, GetModuleHandle(NULL), NULL);
+	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
+		TEXT("v"),                  // the caption of the button
+		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
+		100, 125,                                  // the left and top co-ordinates
+		20, 20,                              // width and height
+		hWnd,                                 // parent window handle
+		(HMENU)ID_BUTTON9,                   // the ID of your button
+		hInstance,                            // the instance of your application
+		NULL);
+	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
+		TEXT("v"),                  // the caption of the button
+		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
+		100, 25,                                  // the left and top co-ordinates
+		20, 20,                              // width and height
+		hWnd,                                 // parent window handle
+		(HMENU)ID_BUTTON10,                   // the ID of your button
+		hInstance,                            // the instance of your application
+		NULL);
+	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
+		TEXT("0"),                  // the caption of the button
+		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
+		500, 300,                                  // the left and top co-ordinates
+		30, 30,                              // width and height
+		hWnd,                                 // parent window handle
+		(HMENU)ID_BUTTON11,                   // the ID of your button
+		hInstance,                            // the instance of your application
+		NULL);
+	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
+		TEXT("1"),                  // the caption of the button
+		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
+		500, 270,                                  // the left and top co-ordinates
+		30, 30,                              // width and height
+		hWnd,                                 // parent window handle
+		(HMENU)ID_BUTTON11,                   // the ID of your button
+		hInstance,                            // the instance of your application
+		NULL);
+	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
+		TEXT("2"),                  // the caption of the button
+		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
+		500, 240,                                  // the left and top co-ordinates
+		30, 30,                              // width and height
+		hWnd,                                 // parent window handle
+		(HMENU)ID_BUTTON11,                   // the ID of your button
+		hInstance,                            // the instance of your application
+		NULL);
+	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
+		TEXT("3"),                  // the caption of the button
+		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
+		500, 210,                                  // the left and top co-ordinates
+		30, 30,                              // width and height
+		hWnd,                                 // parent window handle
+		(HMENU)ID_BUTTON11,                   // the ID of your button
+		hInstance,                            // the instance of your application
+		NULL);
+	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
+		TEXT("4"),                  // the caption of the button
+		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
+		500, 180,                                  // the left and top co-ordinates
+		30, 30,                              // width and height
+		hWnd,                                 // parent window handle
+		(HMENU)ID_BUTTON11,                   // the ID of your button
+		hInstance,                            // the instance of your application
+		NULL);
 
 	OnCreate(hWnd);
 
@@ -542,7 +591,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		case IDM_EXIT:
 			DestroyWindow(hWnd);
 			break;
-
+		//to jest przyk³¹dowa akcja jazdy windy 
+		//nale¿y ustawiæ zmienn¹ pietro na ¿¹dan¹ wartoœæ i zmienn¹ ludzie na liczbê osób po dojechaniu na docelowe piêtro
+		//nastêpnie nale¿y wywo³aæ funkcjê paintElevator
 		case ID_BUTTON2 :
 			pietro = 4;
 			ludzie = 6;
@@ -550,50 +601,45 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			break;
 
 		case ID_BUTTON3:
-			if (skala > 0.4) {
-				skala = skala / 1.3;
-			}
+			//parter gora
 			break;
 		case ID_BUTTON4:
-			if (skala < 1.1) {
-				skala = skala * 1.2;
-			}
+			//pietro 1 gora
 			break;
 		case ID_BUTTON5:
-			if (wys < 25) {
-				wys = wys + 2;
-			}
+			//pietro 1 dol
 			break;
 		case ID_BUTTON6:
-			if (wys >= 7) {
-				wys = wys - 2;
-			}
+			//pietro 2 gora
 		case ID_BUTTON7:
-			if (pomin>=20) {
-				pomin = pomin - 20;
-			}
+			//pietro 2 dol
 			break;
 		case ID_BUTTON8:
-			pomin = pomin + 20;
+			//pietro 3 gora
 			break;
-		case ID_CHECKBOX1:
-			if (SendDlgItemMessage(hWnd, ID_CHECKBOX1, BM_GETCHECK, 0, 0))
-				okr=true;
-			else
-				okr=false;
-		break;
-		case ID_CHECKBOX2:
-			if (SendDlgItemMessage(hWnd, ID_CHECKBOX2, BM_GETCHECK, 0, 0))
-				prz = true;
-			else
-				prz = false;
+		case ID_BUTTON9:
+			//pietro 3 dol
 			break;
-		case ID_CHECKBOX3:
-			if (SendDlgItemMessage(hWnd, ID_CHECKBOX3, BM_GETCHECK, 0, 0))
-				del = true;
-			else
-				del = false;
+		case ID_BUTTON10:
+			//pietro 4 dol
 			break;
+		//tu zaczynaj¹ siê przyciski w windzie
+		case ID_BUTTON11:
+			//paretr
+			break;
+		case ID_BUTTON12:
+			//pietro 1
+			break;
+		case ID_BUTTON13:
+			//pietro 2
+			break;
+		case ID_BUTTON14:
+			//pietro 3
+			break;
+		case ID_BUTTON15:
+			//pietro 4
+			break;
+		
 		default:
 			return DefWindowProc(hWnd, message, wParam, lParam);
 		}
