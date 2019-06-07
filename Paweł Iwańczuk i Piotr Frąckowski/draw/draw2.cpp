@@ -136,8 +136,8 @@ void PaintBase(HDC hdc)
 		gora = false;
 	}
 	int pie, pa;
-	pie = pietro * 75;
-	pa = pietro_a * 75;
+	pie = pietro * 94;
+	pa = pietro_a * 94;
 	if (pie == pa)
 	{
 		graphics.FillRectangle(&czarny, 250, 0, 80, 500);
@@ -515,7 +515,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 		500, 270,                                  // the left and top co-ordinates
 		30, 30,                              // width and height
 		hWnd,                                 // parent window handle
-		(HMENU)ID_BUTTON11,                   // the ID of your button
+		(HMENU)ID_BUTTON12,                   // the ID of your button
 		hInstance,                            // the instance of your application
 		NULL);
 	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
@@ -524,7 +524,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 		500, 240,                                  // the left and top co-ordinates
 		30, 30,                              // width and height
 		hWnd,                                 // parent window handle
-		(HMENU)ID_BUTTON11,                   // the ID of your button
+		(HMENU)ID_BUTTON13,                   // the ID of your button
 		hInstance,                            // the instance of your application
 		NULL);
 	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
@@ -533,7 +533,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 		500, 210,                                  // the left and top co-ordinates
 		30, 30,                              // width and height
 		hWnd,                                 // parent window handle
-		(HMENU)ID_BUTTON11,                   // the ID of your button
+		(HMENU)ID_BUTTON14,                   // the ID of your button
 		hInstance,                            // the instance of your application
 		NULL);
 	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
@@ -542,7 +542,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 		500, 180,                                  // the left and top co-ordinates
 		30, 30,                              // width and height
 		hWnd,                                 // parent window handle
-		(HMENU)ID_BUTTON11,                   // the ID of your button
+		(HMENU)ID_BUTTON15,                   // the ID of your button
 		hInstance,                            // the instance of your application
 		NULL);
 
@@ -595,11 +595,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		//nale¿y ustawiæ zmienn¹ pietro na ¿¹dan¹ wartoœæ i zmienn¹ ludzie na liczbê osób po dojechaniu na docelowe piêtro
 		//nastêpnie nale¿y wywo³aæ funkcjê paintElevator
 		case ID_BUTTON2 :
-			pietro = 4;
+			pietro = 3;
 			ludzie = 6;
 			paintElevator(hWnd, hdc, ps, NULL);
 			break;
-
 		case ID_BUTTON3:
 			//parter gora
 			break;
@@ -625,18 +624,33 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			break;
 		//tu zaczynaj¹ siê przyciski w windzie
 		case ID_BUTTON11:
+			pietro = 0;
+			ludzie = 6;
+			paintElevator(hWnd, hdc, ps, NULL);
 			//paretr
 			break;
 		case ID_BUTTON12:
+			pietro = 1;
+			ludzie = 6;
+			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 1
 			break;
 		case ID_BUTTON13:
+			pietro = 2;
+			ludzie = 6;
+			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 2
 			break;
 		case ID_BUTTON14:
+			pietro = 3;
+			ludzie = 6;
+			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 3
 			break;
 		case ID_BUTTON15:
+			pietro = 4;
+			ludzie = 6;
+			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 4
 			break;
 		
