@@ -43,6 +43,7 @@ int max_load = 8;   //max liczba osob
 
 
 std::queue<int> tablicaKolejekLudzi[6];
+int ileLudziWchodziNaDanymPietrze[6];
 
 // buttons
 HWND hwndButton;
@@ -62,30 +63,6 @@ INT_PTR CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK	Buttons(HWND, UINT, WPARAM, LPARAM);
 
 
-class Czlowiek {
-public:
-
-private:
-
-
-};
-
-class Budynek {
-public:
-
-
-private:
-	
-
-};
-
-class Pietro {
-public:
-
-private:
-
-
-};
 
 
 void MyOnPaint(HDC hdc)
@@ -158,8 +135,6 @@ void PaintBase(HDC hdc)
 	Pen pen2(Color(255, 25 * col, 0, 255));
 	Gdiplus::SolidBrush bialy(Gdiplus::Color(255, 255, 255, 255));
 
-	PointF L = PointF(540, 5);
-	PointF K = PointF(350, 5);
 	Gdiplus::SolidBrush czarny(Gdiplus::Color(255, 0, 0, 0));
 
 	int p1;
@@ -215,12 +190,38 @@ void PaintBase(HDC hdc)
 			//tablicaKolejekLudzi[i].push(0);
 		}
 	}
+
+	PointF L = PointF(540, 5);
+	PointF K = PointF(350, 5);
 	Gdiplus::SolidBrush cyfry(Gdiplus::Color(255, 0, 0, 0));
 	Gdiplus::Font* czcionka = new Font(L"Times New Roman", 13);
 	std::wstring ludzie_string;
 	ludzie_string = std::to_wstring(ludzie_a*70);
 	graphics.DrawString(L"Masa osób w windzie (kg): ", 31, czcionka, K, &cyfry);
 	graphics.DrawString(ludzie_string.c_str(), ludzie_string.length(), czcionka, L, &cyfry);
+
+	PointF A = PointF(130, 320);
+	std::wstring liczba_string;
+	liczba_string = std::to_wstring(ileLudziWchodziNaDanymPietrze[1]);
+	graphics.DrawString(liczba_string.c_str(), liczba_string.length(), czcionka, A, &cyfry);
+
+	PointF B = PointF(130, 270);
+	liczba_string = std::to_wstring(ileLudziWchodziNaDanymPietrze[2]);
+	graphics.DrawString(liczba_string.c_str(), liczba_string.length(), czcionka, B, &cyfry);
+
+	PointF C = PointF(130, 200);
+	liczba_string = std::to_wstring(ileLudziWchodziNaDanymPietrze[3]);
+	graphics.DrawString(liczba_string.c_str(), liczba_string.length(), czcionka, C, &cyfry);
+
+	PointF D = PointF(130, 130);
+	liczba_string = std::to_wstring(ileLudziWchodziNaDanymPietrze[4]);
+	graphics.DrawString(liczba_string.c_str(), liczba_string.length(), czcionka, D, &cyfry);
+
+	PointF E = PointF(130, 70);
+	liczba_string = std::to_wstring(ileLudziWchodziNaDanymPietrze[5]);
+	graphics.DrawString(liczba_string.c_str(), liczba_string.length(), czcionka, E, &cyfry);
+
+
 	pietro_a = pietro;
 }
 
@@ -674,25 +675,40 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			break;
 		case ID_BUTTON3:
 			//parter gora
+			
 			break;
 		case ID_BUTTON4:
 			//pietro 1 gora
+			ileLudziWchodziNaDanymPietrze[1]++;
+			paintElevator(hWnd, hdc, ps, NULL);
 			break;
 		case ID_BUTTON5:
 			//pietro 1 dol
+			ileLudziWchodziNaDanymPietrze[1]--;
+			paintElevator(hWnd, hdc, ps, NULL);
 			break;
 		case ID_BUTTON6:
+			ileLudziWchodziNaDanymPietrze[2]++;
+			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 2 gora
 		case ID_BUTTON7:
+			ileLudziWchodziNaDanymPietrze[2]--;
+			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 2 dol
 			break;
 		case ID_BUTTON8:
+			ileLudziWchodziNaDanymPietrze[3]++;
+			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 3 gora
 			break;
 		case ID_BUTTON9:
+			ileLudziWchodziNaDanymPietrze[3]--;
+			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 3 dol
 			break;
 		case ID_BUTTON10:
+			ileLudziWchodziNaDanymPietrze[4]--;
+			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 4 dol
 			break;
 		//tu zaczynaj¹ siê przyciski w windzie
