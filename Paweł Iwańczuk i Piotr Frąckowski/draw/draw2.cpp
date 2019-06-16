@@ -11,6 +11,8 @@
 #include <algorithm>
 #include <cmath>
 #include <chrono>
+#include <queue>
+
 
 #define MAX_LOADSTRING 100
 #define TMR_1 1
@@ -38,6 +40,10 @@ int ludzie = 0;   //docelowa wartosc
 int ludzie_a = 0;  //aktualna wartosc
 int max_load = 8;   //max liczba osob
 
+
+
+std::queue<int> tablicaKolejekLudzi[6];
+
 // buttons
 HWND hwndButton;
 
@@ -56,6 +62,32 @@ INT_PTR CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK	Buttons(HWND, UINT, WPARAM, LPARAM);
 
 
+class Czlowiek {
+public:
+
+private:
+
+
+};
+
+class Budynek {
+public:
+
+
+private:
+	
+
+};
+
+class Pietro {
+public:
+
+private:
+
+
+};
+
+
 void MyOnPaint(HDC hdc)
 {
 	Graphics graphics(hdc);
@@ -67,6 +99,9 @@ void MyOnPaint(HDC hdc)
 	PointF B = PointF(250, 5);
 	PointF D = PointF(250, 35);
 	Gdiplus::SolidBrush cyfry(Gdiplus::Color(255, 0, 0, 0));
+
+
+	
 
 	for (int i = (pomin + 1); i < (s); i++) {
 		graphics.DrawLine(&pen2, data[i - 1].X * skala, data[i - 1].Y * wys / 10, data[i].X * skala, data[i].Y * wys / 10);
@@ -172,6 +207,14 @@ void PaintBase(HDC hdc)
 		p3++;
 		ludzie--;
 	}
+
+	for (int i = 0; i < 6; i++) {
+		for (int j = 0; j < tablicaKolejekLudzi[i].size(); j++) {
+			graphics.FillRectangle(&czarny, 265 + 14 * p3+70, 424 - i*94, 10, 30);
+			p3+=1;
+			//tablicaKolejekLudzi[i].push(0);
+		}
+	}
 	Gdiplus::SolidBrush cyfry(Gdiplus::Color(255, 0, 0, 0));
 	Gdiplus::Font* czcionka = new Font(L"Times New Roman", 13);
 	std::wstring ludzie_string;
@@ -220,7 +263,8 @@ pomiar::pomiar(float Ax, float Ay, float Az)
 }
 
 void inputData()
-{	
+{
+	
 	std::fstream dane;
 	std::string linia;
 	dane.open("outputPendulum01.log", std::ios::in);
@@ -294,11 +338,17 @@ void inputData()
 		data.push_back(Point((i/2)/skala+1, (wart[i]*10+100)+i/20));
 	}
 	s = data.size();
+
+
+	
+
+
 }
 
 
 int OnCreate(HWND window)
 {
+	
 	PAINTSTRUCT ps;
 	HDC hdc;
 	inputData();
@@ -320,6 +370,12 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 	HACCEL hAccelTable;
 
 	value = 0;
+	for (int i = 0; i < 6; i++) {
+		for (int j = 0; j < 6; j++) {
+			tablicaKolejekLudzi[i].push(0);
+		}
+	}
+	
 
 	GdiplusStartupInput gdiplusStartupInput;
 	ULONG_PTR           gdiplusToken;
@@ -405,6 +461,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
 	HWND hWnd;
+	
 
 
 	hInst = hInstance; // Store instance handle (of exe) in our global variable
@@ -559,6 +616,22 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	return TRUE;
 }
 
+void winda(int pietro,int ile_ludzi_wsiada) {
+	
+	for (int i = 0; i < ludzie_a; i++)
+	{
+		tablicaKolejekLudzi[pietro].push(0);
+	}
+	for (int i = 0; i < ile_ludzi_wsiada; i++)
+	{
+		tablicaKolejekLudzi[pietro].pop();
+	}
+	ludzie = 0;
+	ludzie = ile_ludzi_wsiada;
+	
+}
+
+
 //
 //  FUNCTION: WndProc(HWND, UINT, WPARAM, LPARAM)
 //
@@ -596,7 +669,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		//nastêpnie nale¿y wywo³aæ funkcjê paintElevator
 		case ID_BUTTON2 :
 			pietro = 3;
-			ludzie = 6;
+			//ludzie = 6;
 			paintElevator(hWnd, hdc, ps, NULL);
 			break;
 		case ID_BUTTON3:
@@ -625,31 +698,31 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		//tu zaczynaj¹ siê przyciski w windzie
 		case ID_BUTTON11:
 			pietro = 0;
-			ludzie = 6;
+			winda(pietro,1);
 			paintElevator(hWnd, hdc, ps, NULL);
 			//paretr
 			break;
 		case ID_BUTTON12:
 			pietro = 1;
-			ludzie = 6;
+			winda(pietro,2);
 			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 1
 			break;
 		case ID_BUTTON13:
 			pietro = 2;
-			ludzie = 6;
+			winda(pietro,3);
 			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 2
 			break;
 		case ID_BUTTON14:
 			pietro = 3;
-			ludzie = 6;
+			winda(pietro,4);
 			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 3
 			break;
 		case ID_BUTTON15:
 			pietro = 4;
-			ludzie = 6;
+			winda(pietro,5);
 			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 4
 			break;
