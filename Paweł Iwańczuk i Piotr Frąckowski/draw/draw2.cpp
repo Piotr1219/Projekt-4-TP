@@ -200,25 +200,26 @@ void PaintBase(HDC hdc)
 	graphics.DrawString(L"Masa osób w windzie (kg): ", 31, czcionka, K, &cyfry);
 	graphics.DrawString(ludzie_string.c_str(), ludzie_string.length(), czcionka, L, &cyfry);
 
+
 	PointF A = PointF(130, 320);
 	std::wstring liczba_string;
 	liczba_string = std::to_wstring(ileLudziWchodziNaDanymPietrze[1]);
 	graphics.DrawString(liczba_string.c_str(), liczba_string.length(), czcionka, A, &cyfry);
 
-	PointF B = PointF(130, 270);
+	PointF B = PointF(130, 200);
 	liczba_string = std::to_wstring(ileLudziWchodziNaDanymPietrze[2]);
 	graphics.DrawString(liczba_string.c_str(), liczba_string.length(), czcionka, B, &cyfry);
 
-	PointF C = PointF(130, 200);
+	PointF C = PointF(130, 100);
 	liczba_string = std::to_wstring(ileLudziWchodziNaDanymPietrze[3]);
 	graphics.DrawString(liczba_string.c_str(), liczba_string.length(), czcionka, C, &cyfry);
 
-	PointF D = PointF(130, 130);
+	PointF D = PointF(130, 20);
 	liczba_string = std::to_wstring(ileLudziWchodziNaDanymPietrze[4]);
 	graphics.DrawString(liczba_string.c_str(), liczba_string.length(), czcionka, D, &cyfry);
 
-	PointF E = PointF(130, 70);
-	liczba_string = std::to_wstring(ileLudziWchodziNaDanymPietrze[5]);
+	PointF E = PointF(130, 420);
+	liczba_string = std::to_wstring(ileLudziWchodziNaDanymPietrze[0]);
 	graphics.DrawString(liczba_string.c_str(), liczba_string.length(), czcionka, E, &cyfry);
 
 
@@ -559,6 +560,24 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 		hInstance,                            // the instance of your application
 		NULL);
 	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
+		TEXT("v"),                  // the caption of the button
+		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
+		100, 430,                                  // the left and top co-ordinates
+		20, 20,                              // width and height
+		hWnd,                                 // parent window handle
+		(HMENU)ID_BUTTON16,                   // the ID of your button
+		hInstance,                            // the instance of your application
+		NULL);
+	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
+		TEXT("^"),                  // the caption of the button
+		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
+		100, 4,                                  // the left and top co-ordinates
+		20, 20,                              // width and height
+		hWnd,                                 // parent window handle
+		(HMENU)ID_BUTTON17,                   // the ID of your button
+		hInstance,                            // the instance of your application
+		NULL);
+	hwndButton = CreateWindow(TEXT("button"),                      // The class name required is button
 		TEXT("0"),                  // the caption of the button
 		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,  // the styles
 		500, 300,                                  // the left and top co-ordinates
@@ -603,6 +622,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 		(HMENU)ID_BUTTON15,                   // the ID of your button
 		hInstance,                            // the instance of your application
 		NULL);
+
 
 	OnCreate(hWnd);
 
@@ -673,9 +693,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			//ludzie = 6;
 			paintElevator(hWnd, hdc, ps, NULL);
 			break;
+		case ID_BUTTON16:
+			ileLudziWchodziNaDanymPietrze[0]--;
+			paintElevator(hWnd, hdc, ps, NULL);
+			break;
 		case ID_BUTTON3:
 			//parter gora
-			
+			ileLudziWchodziNaDanymPietrze[0]++;
+			paintElevator(hWnd, hdc, ps, NULL);
 			break;
 		case ID_BUTTON4:
 			//pietro 1 gora
@@ -706,6 +731,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 3 dol
 			break;
+		case ID_BUTTON17:
+			ileLudziWchodziNaDanymPietrze[4]++;
+			paintElevator(hWnd, hdc, ps, NULL);
+			break;
 		case ID_BUTTON10:
 			ileLudziWchodziNaDanymPietrze[4]--;
 			paintElevator(hWnd, hdc, ps, NULL);
@@ -714,31 +743,31 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		//tu zaczynaj¹ siê przyciski w windzie
 		case ID_BUTTON11:
 			pietro = 0;
-			winda(pietro,1);
+			winda(pietro,ileLudziWchodziNaDanymPietrze[0]);
 			paintElevator(hWnd, hdc, ps, NULL);
 			//paretr
 			break;
 		case ID_BUTTON12:
 			pietro = 1;
-			winda(pietro,2);
+			winda(pietro,ileLudziWchodziNaDanymPietrze[1]);
 			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 1
 			break;
 		case ID_BUTTON13:
 			pietro = 2;
-			winda(pietro,3);
+			winda(pietro,ileLudziWchodziNaDanymPietrze[2]);
 			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 2
 			break;
 		case ID_BUTTON14:
 			pietro = 3;
-			winda(pietro,4);
+			winda(pietro,ileLudziWchodziNaDanymPietrze[3]);
 			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 3
 			break;
 		case ID_BUTTON15:
 			pietro = 4;
-			winda(pietro,5);
+			winda(pietro,ileLudziWchodziNaDanymPietrze[4]);
 			paintElevator(hWnd, hdc, ps, NULL);
 			//pietro 4
 			break;

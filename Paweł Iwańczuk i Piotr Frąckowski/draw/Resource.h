@@ -33,6 +33,8 @@
 #define ID_BUTTON13				214
 #define ID_BUTTON14				215
 #define ID_BUTTON15				216
+#define ID_BUTTON16				217
+#define ID_BUTTON17				218
 #define ID_RBUTTON1				210
 #define ID_RBUTTON2				211
 

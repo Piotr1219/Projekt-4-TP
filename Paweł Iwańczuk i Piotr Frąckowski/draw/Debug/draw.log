@@ -5,19 +5,19 @@ C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw
 C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(105,1): warning C4996:  '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdlib.h(1274): message :  zobacz deklarację „_sleep”
 C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(187,21): warning C4018:  "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(294,7): warning C4215:  użyto niestandardowego rozszerzenia: long float
-C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(311,100): warning C4244:  "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(295,7): warning C4215:  użyto niestandardowego rozszerzenia: long float
 C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(312,100): warning C4244:  "=": konwersja z "double" do "float", możliwa utrata danych
 C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(313,100): warning C4244:  "=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(327,9): warning C4244:  "=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(339,55): warning C4244:  "argument": konwersja z "_Ty" do "INT", możliwa utrata danych
-C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(339,55): warning C4244:         with
-C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(339,55): warning C4244:         [
-C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(339,55): warning C4244:             _Ty=float
-C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(339,55): warning C4244:         ]
-C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(339,35): warning C4244:  "argument": konwersja z "double" do "INT", możliwa utrata danych
-C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(354,6): warning C4101:  "hdc": lokalna zmienna, do której nie istnieje odwołanie
-C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(353,14): warning C4101:  "ps": lokalna zmienna, do której nie istnieje odwołanie
-C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(474,6): warning C4101:  "hdc": lokalna zmienna, do której nie istnieje odwołanie
-C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(473,14): warning C4101:  "ps": lokalna zmienna, do której nie istnieje odwołanie
+C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(314,100): warning C4244:  "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(328,9): warning C4244:  "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(340,55): warning C4244:  "argument": konwersja z "_Ty" do "INT", możliwa utrata danych
+C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(340,55): warning C4244:         with
+C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(340,55): warning C4244:         [
+C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(340,55): warning C4244:             _Ty=float
+C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(340,55): warning C4244:         ]
+C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(340,35): warning C4244:  "argument": konwersja z "double" do "INT", możliwa utrata danych
+C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(355,6): warning C4101:  "hdc": lokalna zmienna, do której nie istnieje odwołanie
+C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(354,14): warning C4101:  "ps": lokalna zmienna, do której nie istnieje odwołanie
+C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(475,6): warning C4101:  "hdc": lokalna zmienna, do której nie istnieje odwołanie
+C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\draw\draw2.cpp(474,14): warning C4101:  "ps": lokalna zmienna, do której nie istnieje odwołanie
   draw.vcxproj -> C:\Users\untitled\Desktop\Projekt-4-TP\Paweł Iwańczuk i Piotr Frąckowski\Debug\draw2.exe
